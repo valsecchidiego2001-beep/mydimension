@@ -379,6 +379,13 @@ a:focus-visible {
   height: auto;
 }
 
+/* foto a bassa risoluzione: mostrata più piccola per non sgranare */
+.article-images img.img-small {
+  width: 100%;
+  max-width: 340px;
+  align-self: center;
+}
+
 .article-text {
   color: #fff;
   line-height: 1.8;
