@@ -3,6 +3,14 @@
    (index.html + frontofhouse.html)
    ========================================================= */
 
+/* ---------- Colori ----------
+   Cambia qui per modificare tutto il sito */
+:root {
+  --bg: #05081a;
+  --text-soft: #b8b8b8;
+  --accent: #e0b36a;   /* oro caldo, "luce di palco" */
+}
+
 /* ---------- Base ---------- */
 *,
 *::before,
@@ -18,7 +26,7 @@ html {
 }
 
 body {
-  background: #05081a;
+  background: var(--bg);
   color: #fff;
   font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,8 +45,6 @@ h1 {
   letter-spacing: 1px;
   margin-bottom: 18px;
   text-transform: uppercase;
-  text-align: justify;
-  hyphens: auto;
 }
 
 /* Link "salta al contenuto" per chi naviga da tastiera */
@@ -79,8 +85,34 @@ a:focus-visible {
 }
 
 .btn:hover {
-  background: #fff;
+  background: var(--accent);
+  color: #1a1a1a;
   transform: translateY(-2px);
+}
+
+/* pulsante secondario: solo contorno */
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+.btn-outline:hover {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.hero .btn { margin: 0 6px 34px; }
+
+/* titoletto in maiuscoletto spaziato, color accento */
+.eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
 }
 
 /* =========================================================
@@ -127,10 +159,9 @@ a:focus-visible {
   color: #b8b8b8;
   font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  letter-spacing: 1.5px;
+  margin-bottom: 32px;
   line-height: 1.6;
-  text-align: justify;
-  hyphens: auto;
 }
 
 .socials {
@@ -154,7 +185,7 @@ a:focus-visible {
 
 .socials a:hover {
   transform: translateY(-3px);
-  background: #fff;
+  background: var(--accent);
 }
 
 .socials svg {
@@ -231,18 +262,32 @@ a:focus-visible {
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 }
 
-/* animazione elegante all'apertura */
-.apple-image-wrap,
-.apple-overlay h2,
-.apple-overlay p {
-  animation: fadeUp 1s ease both;
+/* animazione quando l'elemento entra nello schermo
+   (la classe .js la aggiunge lo script in pagina: senza JavaScript tutto resta visibile) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1s ease, transform 1s ease;
 }
-.apple-overlay h2 { animation-delay: 0.15s; }
-.apple-overlay p  { animation-delay: 0.3s; }
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.js .reveal .apple-overlay > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease 0.25s, transform 0.9s ease 0.25s;
+}
+.js .reveal.is-visible .apple-overlay > * {
+  opacity: 1;
+  transform: none;
+}
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(35px); }
-  to   { opacity: 1; transform: translateY(0); }
+.apple-image-wrap img {
+  transition: transform 1.2s ease;
+}
+.apple-image-wrap:hover img {
+  transform: scale(1.06);
 }
 
 /* =========================================================
@@ -282,8 +327,6 @@ a:focus-visible {
   flex-direction: column;
   justify-content: center;
   padding: 100px 120px;
-  text-align: justify;
-  hyphens: auto;
 }
 
 .about-text h2 {
@@ -304,9 +347,7 @@ a:focus-visible {
    FRONT OF HOUSE
    ========================================================= */
 .page-foh {
-  background: #000;
-  text-align: justify;
-  hyphens: auto;
+  background: var(--bg);
 }
 
 .foh-hero {
@@ -361,9 +402,9 @@ a:focus-visible {
 .foh-subtitle {
   font-weight: 600;
   font-size: 0.9rem;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  color: #fff;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  color: var(--accent);
 }
 
 .article-layout {
@@ -384,6 +425,7 @@ a:focus-visible {
 .article-images img {
   width: 100%;
   height: auto;
+  border-radius: 16px;
 }
 
 /* foto a bassa risoluzione: mostrata più piccola per non sgranare */
@@ -396,8 +438,7 @@ a:focus-visible {
 .article-text {
   color: #fff;
   line-height: 1.8;
-  text-align: justify;
-  hyphens: auto;
+  color: #d8d8d8;
   padding-right: 50px;
 }
 
@@ -405,6 +446,17 @@ a:focus-visible {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 2.5rem;
   margin-bottom: 30px;
+  color: #fff;
+}
+
+.article-text h2::after,
+.about-text h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-top: 16px;
+  background: var(--accent);
 }
 
 .article-text p + p {
@@ -416,8 +468,25 @@ a:focus-visible {
   margin: 40px auto;
   border: none;
   height: 1px;
-  background: rgba(255, 255, 255, 0.25);
+  width: calc(100% - 80px);
+  background: linear-gradient(to right, transparent, rgba(224, 179, 106, 0.5), transparent);
 }
+
+/* footer della home */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px 20px 60px;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+.site-footer .socials { margin-bottom: 22px; }
+.site-footer a.mail {
+  color: var(--text-soft);
+  text-decoration: none;
+}
+.site-footer a.mail:hover { color: var(--accent); }
 
 .foh-footer {
   text-align: center;
@@ -450,7 +519,7 @@ a:focus-visible {
   .gallery { height: 55vh; }
   .content { min-height: 45vh; padding: 60px 25px; }
   h1 { font-size: 3.2rem; }
-  .subtitle { font-size: 0.9rem; text-align: center; }
+  .subtitle { font-size: 0.9rem; }
 
   .about-container { flex-direction: column; min-height: auto; }
   #chi-sono { min-height: auto; }
@@ -465,7 +534,7 @@ a:focus-visible {
   .foh-hero { height: 32vh; padding: 20px; }
   .hero-text { padding: 20px; }
   .foh-hero h1 { font-size: 2.2rem; }
-  .foh-content { padding: 50px 20px; text-align: center; }
+  .foh-content { padding: 50px 20px; }
 
   .article-layout {
     display: flex;
@@ -520,4 +589,10 @@ a:focus-visible {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* etichetta sulle foto: più luminosa e con ombra per leggerla anche su immagini chiare */
+.apple-overlay .eyebrow {
+  color: #f3cf8e;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
 }
