@@ -1,697 +1,197 @@
 <!DOCTYPE html>
-<html lang="it">
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front of House — Diego Valsecchi</title>
+  <meta name="description" content="Front of House: articles and concepts by Diego Valsecchi on stage design, immersive audio and live event experiences — Epicentro, Red Bull Energy Zone, Surf Against the Sun, Kiss &amp; Fly.">
+  <meta name="author" content="Diego Valsecchi">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://valsecchidiego2001-beep.github.io/mydimension/frontofhouse.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305081a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23fff' text-anchor='middle'%3EDV%3C/text%3E%3C/svg%3E">
 
- <!-- Font -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Front of House — Diego Valsecchi">
+  <meta property="og:description" content="Ideas on stage design, immersive audio and the live event experience.">
+  <meta property="og:url" content="https://valsecchidiego2001-beep.github.io/mydimension/frontofhouse.html">
+  <meta property="og:image" content="https://valsecchidiego2001-beep.github.io/mydimension/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FRONT OF HOUSE</title>
-
-<style>
-
-  .article-layout{
-display:grid;
-grid-template-columns: 40% 60%;
-gap:60px;
-
-max-width:1400px;
-margin:120px auto;
-padding:0 40px;
-}
-
-.article-images{
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
-.article-images img{
-width:100%;
-height:auto;
-display:block;
-}
-
-.article-text{
-font-family:'Montserrat', sans-serif;
-color:white;
-line-height:1.8;
-text-align: justify;
-hyphens: auto;
-padding-right:50px;
-}
-
-
-.article-text h2{
-font-family:'Cormorant Garamond', serif;
-font-size:2.5rem;
-margin-bottom:30px;
-}
-
-  .apple-project {
-  width: 100%;
-  padding: 40px 0;
-}
-
-.apple-image-wrap {
-  position: relative;
-  width: 92%;
-  max-width: 1400px;
-  margin: 0 auto;
-  min-height: 90vh;
-  border-radius: 28px;
-  overflow: hidden;
-  background: #111;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-}
-
-.apple-image-wrap img {
-  width: 100%;
-  height: 90vh;
-  object-fit: cover;
-  display: block;
-  transform: scale(1.03);
-}
-
-.apple-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: center;
-  padding: 70px 60px;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.45) 35%,
-    rgba(0, 0, 0, 0.12) 65%,
-    rgba(0, 0, 0, 0.02) 100%
-  );
-}
-
-.apple-overlay h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.4rem;
-  line-height: 1;
-  margin-bottom: 22px;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-}
-
-.apple-overlay p {
-  max-width: 950px;
-  font-size: 1.15rem;
-  line-height: 1.9;
-  color: rgba(255, 255, 255, 0.92);
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
-}
-
-/* animazione elegante all'apertura */
-.apple-image-wrap,
-.apple-overlay h2,
-.apple-overlay p {
-  animation: fadeUp 1s ease both;
-}
-
-.apple-overlay h2 {
-  animation-delay: 0.15s;
-}
-
-.apple-overlay p {
-  animation-delay: 0.3s;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* tablet */
-@media (max-width: 1024px) {
-  .apple-image-wrap {
-    width: 94%;
-    min-height: 80vh;
-  }
-
-  .apple-image-wrap img {
-    height: 80vh;
-  }
-
-  .apple-overlay {
-    padding: 50px 35px;
-  }
-
-  .apple-overlay h2 {
-    font-size: 2.8rem;
-  }
-
-  .apple-overlay p {
-    font-size: 1rem;
-    line-height: 1.8;
-  }
-}
-
-/* mobile */
-@media (max-width: 640px) {
-  #portfolio {
-    padding: 30px 0 80px;
-  }
-
-  .apple-project {
-    padding: 20px 0;
-  }
-
-  .apple-image-wrap {
-    width: 95%;
-    min-height: 72vh;
-    border-radius: 20px;
-  }
-
-  .apple-image-wrap img {
-    height: 72vh;
-  }
-
-  .apple-overlay {
-    justify-content: flex-end;
-    padding: 28px 20px;
-  }
-
-  .apple-overlay h2 {
-    font-size: 2rem;
-    margin-bottom: 14px;
-  }
-
-  .apple-overlay p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    max-width: 100%;
-  }
-}
-
-
-
-.foh-subtitle{
-font-family:'Montserrat', sans-serif;
-font-weight:600;
-font-size:0.9rem;
-letter-spacing:2px;
-margin-bottom:15px;
-}
-
- html {
-  scroll-behavior: smooth;
-}
-
-h1, h2, h3{
-font-family:'Montserrat', sans-serif;
-}
-
-body{
-background:#000000;
-color:white;
-margin:0;
-font-family:'Montserrat', sans-serif;
-text-align: justify;
-hyphens: auto;
-}
-
-.foh-hero{
-height:100vh;
-display:flex;
-align-items:center;
-}
-
-.hero-image{
-width:50%;
-height:100%;
-overflow:hidden;
-}
-
-.hero-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.hero-text{
-width:50%;
-display:flex;
-align-items:center;
-padding:80px;
-text-align:justify;
-hyphens:auto;
-}
-
-.hero-text h1{
-font-family:'Cormorant Garamond', serif;
-font-size:4rem;
-letter-spacing:2px;
-align-items:center;
-text-align: justify;
-hyphens: auto;
-}
-
-h1 {
-font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem;
-      font-weight: 600;
-      line-height: 0.95;
-      letter-spacing: 1px;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-      text-align: justify;
-      hyphens: auto;
-    }
-
-
-.foh-content{
-max-width:900px;
-margin:auto;
-padding:80px 20px;
-line-height:1.8;
-color:#b8b8b8;
-}
-
-.home-btn{
-display: inline-block;
-      background: #e9e9e9;
-      color: #000000;
-      text-decoration: none;
-      padding: 14px 34px;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      transition: 0.3s ease;
-      margin-bottom: 34px;
-}
-@media (max-width: 900px){
-
-  .navbar{
-    flex-direction: column;
-    gap: 14px;
-    padding: 16px 20px;
-  }
-
-  .nav-links{
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .hero{
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .gallery,
-  .content{
-    width: 100%;
-  }
-
-  .gallery{
-    height: 50vh;
-  }
-
-  .gallery img{
-    height: 100%;
-  }
-
-  .content{
-    padding: 50px 24px;
-  }
-
-  h1{
-    font-size: 2.6rem;
-  }
-
-  .subtitle{
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .article-layout{
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 0 20px;
-    margin: 70px auto;
-  }
-
-  .article-text{
-    padding: 0;
-  }
-
-  .article-text h2{
-    font-size: 2rem;
-  }
-
-  #chi-sono,
-  .about-container{
-    min-height: auto;
-  }
-
-  .about-container{
-    flex-direction: column;
-  }
-
-  .about-image,
-  .about-text{
-    width: 100%;
-  }
-
-  .about-image img{
-    height: 50vh;
-  }
-
-  .about-text{
-    padding: 50px 24px;
-  }
-
-  .about-text h2{
-    font-size: 2.2rem;
-  }
-
-  .foh-hero{
-    height: 32vh;
-    padding: 20px;
-  }
-
-  .foh-hero h1{
-    font-size: 2.2rem;
-  }
-
-  .foh-content{
-    padding: 50px 20px;
-    text-align: center;
-  }
-
-  .btn,
-  .comment-btn,
-  .home-btn{
-    width: 100%;
-    text-align: center;
-  }
-
-  #nickname-input,
-  #comment-input{
-    font-size: 16px;
-  }
-}
-@media (max-width: 600px){
-
-  .navbar{
-    padding: 14px 16px;
-  }
-
-  .nav-logo{
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  .nav-links a{
-    font-size: 0.85rem;
-  }
-
-  h1{
-    font-size: 2rem;
-  }
-
-  .content{
-    padding: 40px 18px;
-  }
-
-  .gallery{
-    height: 42vh;
-  }
-
-  .article-layout{
-    padding: 0 16px;
-  }
-
-  .article-images{
-    gap: 12px;
-  }
-
-  .article-text h2{
-    font-size: 1.7rem;
-  }
-
-  .article-text{
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .about-image img{
-    height: 42vh;
-  }
-
-  .about-text{
-    padding: 40px 18px;
-  }
-
-  .about-text p{
-    max-width: 100%;
-    font-size: 0.98rem;
-    line-height: 1.8;
-  }
-
-  .foh-hero h1{
-    font-size: 1.8rem;
-  }
-
-  .foh-content{
-    padding: 40px 16px;
-  }
-}
-@media (max-width: 900px){
-  .article-layout{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .article-text{
-    padding: 0 20px;
-  }
-}
- .article-divider{
-   max-width: 1400px;
-   margin: 40px auto;
-   border: none;
-   height: 1px;
-   background: rgba(255,255,255,0.25);
-  }
-  
-</style>
-
+  <link rel="preload" as="image" href="img/front-of-house.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-
-<section class="foh-hero">
-
-  <div class="hero-image">
-    <img src="FOH.jpeg" alt="Front of House">
-  </div>
-
-  <div class="hero-text">
-    <h1>Front of House</h1>
-  </div>
-
-</section>
-
-
-<section class="foh-content">
-
-<p class="foh-subtitle">
-WHERE ARE WE
-</p>
-
-<p>
-The Front of House represents the meeting point between organization and audience — between eyes and emotions, between the ideas of the producer and the sensations of the spectator. But it is more than that: the Front of House acts as a catalyst for human processes, encouraging cognitive engagement and supporting the development of ideas, concepts, and emotions.
-
-This space aims to play exactly that role. To act as a Front of House between readers — fostering the growth and sharing of meaningful ideas, and serving as a place where they can converge.
-
-This space is dedicated to everyone who has something to say, something to show, or something to persuade others of. It doesn’t matter what it is — if it sparks an emotion, you’re in the right place.
-</p>
-
-</section>
-
-<section class="article-layout">
-
-<div class="article-images">
-
-<img src="EPICENTER 1.png" alt="render 1">
-<img src="EPICENTER 2.png" alt="render 2">
-<img src="EPICENTER 3.png" alt="render 3">
-
-</div>
-
-
-<div class="article-text">
-
-<h2>EPICENTRO</h2>
-
-<p>
-  The electronic music landscape has, for many years, been in constant search of new ways to leave a lasting mark on the audience. Beyond sound itself, the live experience has become a crucial element in shaping how music is perceived and remembered. Among the many tools available to creators and producers, the stage plays a central role.
-Dimensions, scenography, colors, LED walls, technical solutions, positioning, and orientation are just some of the elements that define a stage and make it unique. Each design choice contributes to shaping the visual and emotional language of a performance, determining which elements of the show stand out and how the audience interacts with them.
-</p>
-
-<p>
-When discussing prominence within a performance, an important question naturally arises: who is the true protagonist of a show? Is it the spectator, whose emotions and reactions give meaning to the experience? Is it the artist, the creative force that drives the performance? Or is it the art itself, the expression that connects both sides? Perhaps the true answer lies in the balance between all three.
-
-From this perspective, the world of production constantly explores ways to bring these elements together into a single core — a shared center, an epicenter of the show where art, artist, and audience coexist within the same experiential dimension.
-
-This vision has led to the development of 360° stages, designed to dissolve the traditional front-facing hierarchy between performer and spectator. By placing the artist at the center and surrounding them with the audience, these stages create a circular structure where the three fundamental elements of the show — art, artist, and spectator — become part of the same spatial and emotional system.
-</p>
-
-<p>
-“Epicentro” embraces this philosophy and transforms it into its essential concept. It proposes a specific and minimalist stage design that does not seek to dominate the scene, but rather to host and support the experience. Instead of drawing attention to itself, the structure quietly frames the moment, allowing the true protagonists of the show — art, artist, and audience — to emerge and interact naturally.
-</p>
-
-</div>
-
-</section>
-
-<hr class="article-divider">
-
-<section class="article-layout">
-
-  <div class="article-images">
-
-    <img src="redbull1.png" alt="render 1">
-    <img src="redbull2.png" alt="render 2">
-    <img src="redbull3.png" alt="render 3">
-
-  </div>
-
-  <div class="article-text">
-
-    <h2>REDBULL ENERGY ZONE</h2>
-
-    <p>
-      How much do size and scale really matter?
-      When it comes to a stage, not as much as you might think.
-    </p>
-
-    <p>
-      That’s exactly what Red Bull demonstrated at Nameless Festival 2026 with the Red Bull Energy Zone: a relatively compact stage concept that prioritized audience experience over physical scale.
-    </p>
-
-    <p>
-     In the live events industry, bigger is often assumed to be better. Larger stages, larger productions, larger budgets. Yet some of the most memorable experiences are created not through size, but through proximity, immersion, and emotional connection.
-    </p>
-
-    <p>
-     The front-of-house area, built around a circular layout of approximately 20 meters in diameter, featured a carefully designed L-Acoustics sound system engineered to surround the audience in a true 360° audio environment. The result was a fully immersive experience where spectators were not simply watching a performance—they were part of it. Almost like standing inside a living, breathing cauldron of music, lights, and people. 
-    </p>
-
-    <p>
-     The stage itself, a small pyramid positioned almost at crowd level, broke down the traditional barrier between artist and audience. This intimate setup created a sense of closeness rarely found on larger festival stages, amplifying engagement and making every performance feel more personal and immediate.
-    </p>
-    
-    <p>
-     What makes immersive design so powerful is that it shifts the focus from spectacle to participation. Rather than asking the audience to observe from a distance, it invites them into the experience. In many ways, this is where the future of live entertainment is heading: creating meaningful moments rather than simply building larger structures.
-    </p>
-
-    <p>
-     Red Bull clearly got it right. The constant flow of visitors, the consistently packed audience area, and the long dwell times around the stage all pointed to the same conclusion: people were not just passing through—they wanted to stay.
-    </p>
-
-    <p>
-     Perhaps the true measure of a stage is not the amount of space it occupies, but the impact it creates.
-
-     Because in the end, audiences don't remember square meters—they remember how a place made them feel.
-    </p>
-
-  </div>
-
-</section>
-
-<hr class="article-divider">
-
-<section class="article-layout">
-
-  <div class="article-images">
-
-    <img src="H1.png" alt="render 1">
-    <img src="H2.png" alt="render 2">
-    <img src="H3.png" alt="render 3">
-
-  </div>
-
-  <div class="article-text">
-
-    <h2>SURF AGAINST THE SUN</h2>
-
-    <p>
-     For this university project, I developed a communication concept for Cantabria Labs, a dermatology brand focused on skin health and photoprotection. The brief asked for an event capable of raising awareness about the importance of sun protection through an engaging and accessible experience. I wanted to avoid fear‑based messaging and instead create something that felt positive, familiar, and capable of reaching both families and athletes.
-    </p>
-  
-    <p>
-     Australia quickly emerged as the ideal setting. It is the country with the highest incidence of skin cancer worldwide and simultaneously a market where Cantabria Labs has strong potential for growth. Its vibrant surf culture offered a natural opportunity to connect with people who spend long hours outdoors and are therefore more exposed to UV radiation.
-    </p>
-    
-    <p>
-     From this insight, I created Surf Against the Sun, a charity‑driven surf event designed to promote healthy sun habits through sport, community, and education. The event was set in Huntington Beach, chosen for its symbolic relevance within the surf world and its ability to attract a wide audience. The tone of the initiative was intentionally light and friendly, encouraging participants to enjoy the sun responsibly rather than fear it.
-
-    </p>
-     
-    <p>
-     The communication plan included a series of posters that visually expressed this balance between awareness and positivity. One image shows a surfer floating calmly on a bright board in clear blue water, conveying the pleasure of outdoor life when lived safely. Another uses the striking “SOS” sunburn pattern to highlight the consequences of neglecting sunscreen — an impactful yet still approachable way to spark attention. These visuals were crafted to appeal to both families and sports enthusiasts, maintaining a playful and familiar aesthetic.
-    </p>
-
-    <p>
-     Through this project, Cantabria Labs is positioned not only as a scientific authority but also as a brand capable of engaging communities in meaningful, enjoyable ways. The event concept merges sport, charity, and dermatological education, offering a format that can generate real engagement and encourage long‑term behavioral change. It represents a strategic opportunity for the brand to grow in a high‑risk market while contributing to public health awareness.
-    </p>
-
-</section>  
-
-<hr class="article-divider">
-
-<section class="article-layout">
-
-  <div class="article-images">
-
-    <img src="AC1.png" alt="render 1">
-    <img src="AC2.png" alt="render 2">
-    <img src="AC3.png" alt="render 3">
-
-  </div>
-
-  <div class="article-text">
-
-    <h2>KISS & FLY</h2>
-
-    <p>
-      The Kiss & Fly Festival Concept, an open‑air event set within the unique atmosphere of a functioning AeroClub, showcases how advanced acoustic planning can elevate unconventional spaces into fully optimized performance environments.
-    </p>
-  
-    <p>
-      he festival concept embraces the dynamic energy of aviation culture, blending music, movement, and wide‑open landscapes into a single immersive experience. To shape its audio identity, I relied extensively on Soundvision, L‑Acoustics’ predictive 3D simulation software. Its real‑world modeling capabilities allowed me to evaluate system feasibility, power distribution, rigging logistics, and overall acoustic performance across the airfield’s complex geometry. Through SPL mapping, coverage optimization, and time‑alignment analysis, Soundvision ensured that every design decision was technically sound long before reaching the site.
-    </p>
-    
-    <p>
-      Its seamless integration with SketchUp and other 3D modeling platforms further strengthened the workflow, enabling precise spatial visualization and a smooth bridge between architectural rendering and acoustic engineering.
-
-    </p>
-     
-
-</section>  
-
-</script>
+<body class="page-foh">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="foh-hero">
+    <div class="hero-image">
+      <img src="img/front-of-house.webp" width="1400" height="1867" alt="LED wall and lights during a night show" fetchpriority="high">
+    </div>
+
+    <div class="hero-text">
+      <h1>Front of House</h1>
+      <a href="index.html" class="btn home-btn">← HOME</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="foh-content">
+      <p class="foh-subtitle">WHERE ARE WE</p>
+
+      <p>
+        The Front of House represents the meeting point between organization and audience — between eyes and emotions, between the ideas of the producer and the sensations of the spectator. But it is more than that: the Front of House acts as a catalyst for human processes, encouraging cognitive engagement and supporting the development of ideas, concepts, and emotions.
+      </p>
+      <p>
+        This space aims to play exactly that role. To act as a Front of House between readers — fostering the growth and sharing of meaningful ideas, and serving as a place where they can converge.
+      </p>
+      <p>
+        This space is dedicated to everyone who has something to say, something to show, or something to persuade others of. It doesn’t matter what it is — if it sparks an emotion, you’re in the right place.
+      </p>
+    </section>
+
+    <!-- ===== EPICENTRO ===== -->
+    <article class="article-layout">
+      <div class="article-images">
+        <img src="img/epicentro-1.webp" width="1200" height="617" alt="Epicentro stage concept, render 1" loading="lazy" decoding="async">
+        <img src="img/epicentro-2.webp" width="1200" height="651" alt="Epicentro stage concept, render 2" loading="lazy" decoding="async">
+        <img src="img/epicentro-3.webp" width="1200" height="638" alt="Epicentro stage concept, render 3" loading="lazy" decoding="async">
+      </div>
+
+      <div class="article-text">
+        <h2>EPICENTRO</h2>
+
+        <p>
+          The electronic music landscape has, for many years, been in constant search of new ways to leave a lasting mark on the audience. Beyond sound itself, the live experience has become a crucial element in shaping how music is perceived and remembered. Among the many tools available to creators and producers, the stage plays a central role.
+        </p>
+        <p>
+          Dimensions, scenography, colors, LED walls, technical solutions, positioning, and orientation are just some of the elements that define a stage and make it unique. Each design choice contributes to shaping the visual and emotional language of a performance, determining which elements of the show stand out and how the audience interacts with them.
+        </p>
+        <p>
+          When discussing prominence within a performance, an important question naturally arises: who is the true protagonist of a show? Is it the spectator, whose emotions and reactions give meaning to the experience? Is it the artist, the creative force that drives the performance? Or is it the art itself, the expression that connects both sides? Perhaps the true answer lies in the balance between all three.
+        </p>
+        <p>
+          From this perspective, the world of production constantly explores ways to bring these elements together into a single core — a shared center, an epicenter of the show where art, artist, and audience coexist within the same experiential dimension.
+        </p>
+        <p>
+          This vision has led to the development of 360° stages, designed to dissolve the traditional front-facing hierarchy between performer and spectator. By placing the artist at the center and surrounding them with the audience, these stages create a circular structure where the three fundamental elements of the show — art, artist, and spectator — become part of the same spatial and emotional system.
+        </p>
+        <p>
+          “Epicentro” embraces this philosophy and transforms it into its essential concept. It proposes a specific and minimalist stage design that does not seek to dominate the scene, but rather to host and support the experience. Instead of drawing attention to itself, the structure quietly frames the moment, allowing the true protagonists of the show — art, artist, and audience — to emerge and interact naturally.
+        </p>
+      </div>
+    </article>
+
+    <hr class="article-divider">
+
+    <!-- ===== RED BULL ENERGY ZONE ===== -->
+    <article class="article-layout">
+      <div class="article-images">
+        <img src="img/redbull-1.webp" width="1086" height="671" alt="Red Bull Energy Zone at Nameless Festival, image 1" loading="lazy" decoding="async">
+        <img src="img/redbull-2.webp" width="1086" height="768" alt="Red Bull Energy Zone at Nameless Festival, image 2" loading="lazy" decoding="async">
+        <img src="img/redbull-3.webp" width="1086" height="910" alt="Red Bull Energy Zone at Nameless Festival, image 3" loading="lazy" decoding="async">
+      </div>
+
+      <div class="article-text">
+        <h2>RED BULL ENERGY ZONE</h2>
+
+        <p>
+          How much do size and scale really matter?
+          When it comes to a stage, not as much as you might think.
+        </p>
+        <p>
+          That’s exactly what Red Bull demonstrated at Nameless Festival 2026 with the Red Bull Energy Zone: a relatively compact stage concept that prioritized audience experience over physical scale.
+        </p>
+        <p>
+          In the live events industry, bigger is often assumed to be better. Larger stages, larger productions, larger budgets. Yet some of the most memorable experiences are created not through size, but through proximity, immersion, and emotional connection.
+        </p>
+        <p>
+          The front-of-house area, built around a circular layout of approximately 20 meters in diameter, featured a carefully designed L-Acoustics sound system engineered to surround the audience in a true 360° audio environment. The result was a fully immersive experience where spectators were not simply watching a performance—they were part of it. Almost like standing inside a living, breathing cauldron of music, lights, and people.
+        </p>
+        <p>
+          The stage itself, a small pyramid positioned almost at crowd level, broke down the traditional barrier between artist and audience. This intimate setup created a sense of closeness rarely found on larger festival stages, amplifying engagement and making every performance feel more personal and immediate.
+        </p>
+        <p>
+          What makes immersive design so powerful is that it shifts the focus from spectacle to participation. Rather than asking the audience to observe from a distance, it invites them into the experience. In many ways, this is where the future of live entertainment is heading: creating meaningful moments rather than simply building larger structures.
+        </p>
+        <p>
+          Red Bull clearly got it right. The constant flow of visitors, the consistently packed audience area, and the long dwell times around the stage all pointed to the same conclusion: people were not just passing through—they wanted to stay.
+        </p>
+        <p>
+          Perhaps the true measure of a stage is not the amount of space it occupies, but the impact it creates.
+        </p>
+        <p>
+          Because in the end, audiences don’t remember square meters—they remember how a place made them feel.
+        </p>
+      </div>
+    </article>
+
+    <hr class="article-divider">
+
+    <!-- ===== SURF AGAINST THE SUN ===== -->
+    <article class="article-layout">
+      <div class="article-images">
+        <img src="img/surf-1.webp" width="1200" height="1692" alt="Surf Against the Sun campaign poster 1" loading="lazy" decoding="async">
+        <img src="img/surf-2.webp" width="1200" height="1692" alt="Surf Against the Sun campaign poster 2" loading="lazy" decoding="async">
+        <img src="img/surf-3.webp" width="1200" height="1692" alt="Surf Against the Sun campaign poster 3" loading="lazy" decoding="async">
+      </div>
+
+      <div class="article-text">
+        <h2>SURF AGAINST THE SUN</h2>
+
+        <p>
+          For this university project, I developed a communication concept for Cantabria Labs, a dermatology brand focused on skin health and photoprotection. The brief asked for an event capable of raising awareness about the importance of sun protection through an engaging and accessible experience. I wanted to avoid fear‑based messaging and instead create something that felt positive, familiar, and capable of reaching both families and athletes.
+        </p>
+        <p>
+          Australia quickly emerged as the ideal setting. It is the country with the highest incidence of skin cancer worldwide and simultaneously a market where Cantabria Labs has strong potential for growth. Its vibrant surf culture offered a natural opportunity to connect with people who spend long hours outdoors and are therefore more exposed to UV radiation.
+        </p>
+        <p>
+          From this insight, I created Surf Against the Sun, a charity‑driven surf event designed to promote healthy sun habits through sport, community, and education. The event was set in Huntington Beach, chosen for its symbolic relevance within the surf world and its ability to attract a wide audience. The tone of the initiative was intentionally light and friendly, encouraging participants to enjoy the sun responsibly rather than fear it.
+        </p>
+        <p>
+          The communication plan included a series of posters that visually expressed this balance between awareness and positivity. One image shows a surfer floating calmly on a bright board in clear blue water, conveying the pleasure of outdoor life when lived safely. Another uses the striking “SOS” sunburn pattern to highlight the consequences of neglecting sunscreen — an impactful yet still approachable way to spark attention. These visuals were crafted to appeal to both families and sports enthusiasts, maintaining a playful and familiar aesthetic.
+        </p>
+        <p>
+          Through this project, Cantabria Labs is positioned not only as a scientific authority but also as a brand capable of engaging communities in meaningful, enjoyable ways. The event concept merges sport, charity, and dermatological education, offering a format that can generate real engagement and encourage long‑term behavioral change. It represents a strategic opportunity for the brand to grow in a high‑risk market while contributing to public health awareness.
+        </p>
+      </div>
+    </article>
+
+    <hr class="article-divider">
+
+    <!-- ===== KISS & FLY ===== -->
+    <article class="article-layout">
+      <div class="article-images">
+        <img src="img/kiss-fly-1.webp" width="650" height="1010" alt="Aerial view of the AeroClub airfield" loading="lazy" decoding="async">
+        <img src="img/kiss-fly-2.webp" width="1200" height="926" alt="Soundvision SPL coverage map" loading="lazy" decoding="async">
+        <img src="img/kiss-fly-3.webp" width="1200" height="792" alt="3D model of the Kiss &amp; Fly stage" loading="lazy" decoding="async">
+      </div>
+
+      <div class="article-text">
+        <h2>KISS &amp; FLY</h2>
+
+        <p>
+          The Kiss &amp; Fly Festival Concept, an open‑air event set within the unique atmosphere of a functioning AeroClub, showcases how advanced acoustic planning can elevate unconventional spaces into fully optimized performance environments.
+        </p>
+        <p>
+          The festival concept embraces the dynamic energy of aviation culture, blending music, movement, and wide‑open landscapes into a single immersive experience. To shape its audio identity, I relied extensively on Soundvision, L‑Acoustics’ predictive 3D simulation software. Its real‑world modeling capabilities allowed me to evaluate system feasibility, power distribution, rigging logistics, and overall acoustic performance across the airfield’s complex geometry. Through SPL mapping, coverage optimization, and time‑alignment analysis, Soundvision ensured that every design decision was technically sound long before reaching the site.
+        </p>
+        <p>
+          Its seamless integration with SketchUp and other 3D modeling platforms further strengthened the workflow, enabling precise spatial visualization and a smooth bridge between architectural rendering and acoustic engineering.
+        </p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="foh-footer">
+    <a href="index.html" class="btn">← BACK TO HOME</a>
+  </footer>
 </body>
 </html>

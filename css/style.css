@@ -1,0 +1,508 @@
+/* =========================================================
+   Diego Valsecchi — foglio di stile condiviso
+   (index.html + frontofhouse.html)
+   ========================================================= */
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #05081a;
+  color: #fff;
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Link "salta al contenuto" per chi naviga da tastiera */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  background: #fff;
+  color: #05081a;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* ---------- Pulsanti ---------- */
+.btn {
+  display: inline-block;
+  background: #e9e9e9;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 14px 34px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-bottom: 34px;
+}
+
+.btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   HOME — hero
+   ========================================================= */
+.hero {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+}
+
+.gallery {
+  width: 50%;
+  display: flex;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 33.333%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  width: 50%;
+  background: #05081a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.content-inner {
+  max-width: 520px;
+  width: 100%;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #b8b8b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.socials a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-3px);
+  background: #fff;
+}
+
+.socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* =========================================================
+   HOME — portfolio
+   ========================================================= */
+#portfolio {
+  background: #05081a;
+  padding: 60px 0 120px;
+}
+
+.apple-project {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.apple-image-wrap {
+  position: relative;
+  width: 92%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 90vh;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.apple-image-wrap img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  transform: scale(1.03);
+}
+
+.apple-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 70px 60px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.45) 35%,
+    rgba(0, 0, 0, 0.12) 65%,
+    rgba(0, 0, 0, 0.02) 100%
+  );
+}
+
+.apple-overlay h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 3.4rem;
+  line-height: 1;
+  margin-bottom: 22px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.apple-overlay p {
+  max-width: 950px;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* animazione elegante all'apertura */
+.apple-image-wrap,
+.apple-overlay h2,
+.apple-overlay p {
+  animation: fadeUp 1s ease both;
+}
+.apple-overlay h2 { animation-delay: 0.15s; }
+.apple-overlay p  { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(35px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   HOME — about me
+   ========================================================= */
+#chi-sono {
+  width: 100%;
+  min-height: 100vh;
+  background: #05081a;
+}
+
+.about-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.about-image {
+  width: 50%;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.about-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 120px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.about-text h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #b8b8b8;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+/* =========================================================
+   FRONT OF HOUSE
+   ========================================================= */
+.page-foh {
+  background: #000;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.foh-hero {
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-image {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.home-btn {
+  margin: 12px 0 0;
+}
+
+.foh-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
+  line-height: 1.8;
+  color: #b8b8b8;
+}
+
+.foh-content p + p {
+  margin-top: 1em;
+}
+
+.foh-subtitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 120px auto;
+  padding: 0 40px;
+}
+
+.article-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.article-images img {
+  width: 100%;
+  height: auto;
+}
+
+.article-text {
+  color: #fff;
+  line-height: 1.8;
+  text-align: justify;
+  hyphens: auto;
+  padding-right: 50px;
+}
+
+.article-text h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.article-text p + p {
+  margin-top: 1em;
+}
+
+.article-divider {
+  max-width: 1400px;
+  margin: 40px auto;
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.foh-footer {
+  text-align: center;
+  padding: 20px 20px 80px;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+/* tablet */
+@media (max-width: 1100px) {
+  h1 { font-size: 4rem; }
+}
+
+@media (max-width: 1024px) {
+  .apple-image-wrap { width: 94%; min-height: 80vh; }
+  .apple-image-wrap img { height: 80vh; }
+  .apple-overlay { padding: 50px 35px; }
+  .apple-overlay h2 { font-size: 2.8rem; }
+  .apple-overlay p { font-size: 1rem; line-height: 1.8; }
+  .about-text { padding: 80px 60px; }
+}
+
+@media (max-width: 900px) {
+  /* home */
+  .hero { flex-direction: column; }
+  .gallery,
+  .content { width: 100%; }
+  .gallery { height: 55vh; }
+  .content { min-height: 45vh; padding: 60px 25px; }
+  h1 { font-size: 3.2rem; }
+  .subtitle { font-size: 0.9rem; text-align: center; }
+
+  .about-container { flex-direction: column; min-height: auto; }
+  #chi-sono { min-height: auto; }
+  .about-image,
+  .about-text { width: 100%; }
+  .about-image img { height: auto; }
+  .about-text { padding: 40px 20px; }
+  .about-text h2 { font-size: 2.2rem; }
+
+  /* front of house */
+  .foh-hero { height: 32vh; padding: 20px; }
+  .hero-text { padding: 20px; }
+  .foh-hero h1 { font-size: 2.2rem; }
+  .foh-content { padding: 50px 20px; text-align: center; }
+
+  .article-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+    margin: 70px auto;
+  }
+  .article-text { padding: 0; }
+  .article-text h2 { font-size: 2rem; }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  #portfolio { padding: 30px 0 80px; }
+  .apple-project { padding: 20px 0; }
+  .apple-image-wrap { width: 95%; min-height: 72vh; border-radius: 20px; }
+  .apple-image-wrap img { height: 72vh; }
+  .apple-overlay {
+    padding: 28px 20px;
+    /* gradiente più scuro: il testo resta leggibile anche su foto chiare */
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.15) 100%);
+  }
+  .apple-overlay h2 { font-size: 2rem; margin-bottom: 14px; }
+  .apple-overlay p { font-size: 0.95rem; line-height: 1.7; max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .gallery { height: 48vh; }
+  h1 { font-size: 2.5rem; }
+  .btn { padding: 12px 28px; font-size: 0.9rem; }
+  .socials a { width: 42px; height: 42px; }
+  .socials svg { width: 16px; height: 16px; }
+
+  .about-text p { max-width: 100%; font-size: 0.98rem; line-height: 1.8; }
+
+  .foh-hero h1 { font-size: 1.8rem; }
+  .home-btn { padding: 10px 20px; font-size: 0.8rem; }
+  .foh-content { padding: 40px 16px; }
+  .article-layout { padding: 0 16px; }
+  .article-images { gap: 12px; }
+  .article-text { font-size: 0.95rem; line-height: 1.7; }
+  .article-text h2 { font-size: 1.7rem; }
+}
+
+/* Chi preferisce meno animazioni (impostazione di sistema) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
